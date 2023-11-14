@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Entity
-@Table(name = "moviecomments")
+@Table(name = "movie-comments")
 public class MovieComment {
 
     @Id

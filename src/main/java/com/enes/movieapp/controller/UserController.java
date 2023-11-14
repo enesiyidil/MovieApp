@@ -1,5 +1,6 @@
 package com.enes.movieapp.controller;
 
+import com.enes.movieapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 
-    private final UserController service;
+    private final UserService service;
 
 }
