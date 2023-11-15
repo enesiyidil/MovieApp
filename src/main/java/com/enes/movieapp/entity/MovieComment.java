@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Entity
-@Table(name = "movie-comments")
+@Table(name = "moviecomments")
 public class MovieComment {
 
     @Id
@@ -31,4 +31,14 @@ public class MovieComment {
 
     @ManyToOne
     private Movie movie;
+
+    @Override
+    public String toString() {
+        return "MovieComment{" +
+                "id=" + id +
+                ", comment='" + comment + '\'' +
+                ", date=" + date +
+                ", user=" + user.getName() +
+                '}';
+    }
 }

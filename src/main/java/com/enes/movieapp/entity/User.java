@@ -41,6 +41,6 @@ public class User {
     @ManyToMany
     private List<Genre> favGenres;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<MovieComment> comments;
 }

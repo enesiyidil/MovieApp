@@ -1,5 +1,6 @@
 package com.enes.movieapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Genre> genre;
 
     private String language;
@@ -34,12 +35,14 @@ public class Movie {
 
     private Double rating;
 
+    @Column(length = 2048)
     private String summary;
 
     private LocalDate premired;
 
     private String url;
 
-    @OneToMany
+    @OneToMany(mappedBy = "movie")
+    @JsonIgnore
     private List<MovieComment> comments;
 }
